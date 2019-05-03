@@ -1,6 +1,5 @@
 package com.example.helpiui;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,12 +14,12 @@ import com.nightonke.boommenu.ButtonEnum;
 import com.nightonke.boommenu.Piece.PiecePlaceEnum;
 import com.nightonke.boommenu.Util;
 
-public class MainActivity extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_user);
         BoomMenuButton bmb = findViewById(R.id.bmb);
         bmb.setButtonEnum(ButtonEnum.TextOutsideCircle);
         bmb.setPiecePlaceEnum(PiecePlaceEnum.DOT_4_1);
@@ -29,38 +28,34 @@ public class MainActivity extends AppCompatActivity {
         bmb.setDraggable(true);
         TextOutsideCircleButton.Builder admin = new TextOutsideCircleButton.Builder()
                 .isRound(false).buttonCornerRadius(Util.dp2px(20))
-                .normalColor(Color.BLUE).normalText("Admin")
-                .normalImageRes(R.drawable.ic_admin_with_cogwheels)
+                .normalColor(Color.BLUE).normalText("Add Query")
+                .normalImageRes(R.drawable.ic_addquery)
                 .listener(new OnBMClickListener() {
                     @Override
                     public void onBoomButtonClick(int index) {
-                        Intent i = new Intent(MainActivity.this, LoginActivity.class);
-                        i.putExtra("type", "admin");
-                        startActivity(i);
+                        Toast.makeText(UserActivity.this, "Clicked " + index, Toast.LENGTH_SHORT).show();
                     }
                 });
         bmb.addBuilder(admin);
         TextOutsideCircleButton.Builder customer = new TextOutsideCircleButton.Builder()
                 .isRound(false).buttonCornerRadius(Util.dp2px(20))
-                .normalColor(Color.RED).normalText("Customer")
-                .normalImageRes(R.drawable.ic_man_user)
+                .normalColor(Color.RED).normalText("Delete Query")
+                .normalImageRes(R.drawable.ic_delete)
                 .listener(new OnBMClickListener() {
                     @Override
                     public void onBoomButtonClick(int index) {
-                        Intent i = new Intent(MainActivity.this, LoginActivity.class);
-                        i.putExtra("type", "user");
-                        startActivity(i);
+                        Toast.makeText(UserActivity.this, "Clicked " + index, Toast.LENGTH_SHORT).show();
                     }
                 });
         bmb.addBuilder(customer);
         TextOutsideCircleButton.Builder feature = new TextOutsideCircleButton.Builder()
                 .isRound(false).buttonCornerRadius(Util.dp2px(20))
-                .normalColor(Color.GREEN).normalText("Features")
-                .normalImageRes(R.drawable.ic_features)
+                .normalColor(Color.GREEN).normalText("Change Query")
+                .normalImageRes(R.drawable.ic_exchange)
                 .listener(new OnBMClickListener() {
                     @Override
                     public void onBoomButtonClick(int index) {
-                        Toast.makeText(MainActivity.this, "Clicked " + index, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UserActivity.this, "Clicked " + index, Toast.LENGTH_SHORT).show();
                     }
                 });
         bmb.addBuilder(feature);
@@ -71,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 .listener(new OnBMClickListener() {
                     @Override
                     public void onBoomButtonClick(int index) {
-                        Toast.makeText(MainActivity.this, "Clicked " + index, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UserActivity.this, "Clicked " + index, Toast.LENGTH_SHORT).show();
                     }
                 });
         bmb.addBuilder(chat);
