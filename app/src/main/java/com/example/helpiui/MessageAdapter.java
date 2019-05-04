@@ -12,12 +12,11 @@ import java.util.List;
 public class MessageAdapter extends ArrayAdapter<ChatBubble> {
 
     private Activity activity;
-    private List<ChatBubble> messages;
 
-    public MessageAdapter(Activity context, int resource, List<ChatBubble> objects) {
+    MessageAdapter(Activity context, int resource, List<ChatBubble> objects) {
         super(context, resource, objects);
         this.activity = context;
-        this.messages = objects;
+        List<ChatBubble> messages = objects;
     }
 
     @Override
