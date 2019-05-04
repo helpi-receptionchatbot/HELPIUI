@@ -1,5 +1,6 @@
 package com.example.helpiui;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -66,7 +67,8 @@ public class AdminActivity extends AppCompatActivity {
                 .listener(new OnBMClickListener() {
                     @Override
                     public void onBoomButtonClick(int index) {
-                        Toast.makeText(AdminActivity.this, "Clicked " + index, Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(AdminActivity.this, ChatActivity.class);
+                        startActivity(i);
                     }
                 });
         bmb.addBuilder(chat);

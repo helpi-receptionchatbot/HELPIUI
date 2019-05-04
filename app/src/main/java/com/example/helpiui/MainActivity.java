@@ -71,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
                 .listener(new OnBMClickListener() {
                     @Override
                     public void onBoomButtonClick(int index) {
-                        Toast.makeText(MainActivity.this, "Clicked " + index, Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(MainActivity.this, ChatActivity.class);
+                        startActivity(i);
                     }
                 });
         bmb.addBuilder(chat);
