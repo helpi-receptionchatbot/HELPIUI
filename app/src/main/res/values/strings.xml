@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HELPIUI</string>
+    <string name="app_name">HELPI</string>
     <string name="login">Login Page</string>
     <string name="signin">Sign In</string>
     <string name="email_alert">Please insert your Id.</string>
